@@ -1,0 +1,5 @@
+{
+  "name": "AI Artistic Riddle Generator",
+  "description": "Generate concepts for mysterious and artistic images that contain hidden riddles. Describe a masterpiece, reveal the solution, and then bring it to life with AI image generation.",
+  "requestFramePermissions": []
+}
