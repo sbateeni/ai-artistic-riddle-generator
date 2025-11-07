@@ -3,7 +3,7 @@ import type { Concept, ArtisticRiddle } from '../types';
 import { CONCEPTS } from '../constants';
 import { generateRiddle, getStoredData, saveStoredData, improveRiddleDescription } from '../services/geminiService';
 import ConceptSelector from './ConceptSelector';
-import EpisodeDisplay from './EpisodeDisplay';
+import RiddleDisplay from './RiddleDisplay';
 import LoadingSpinner from './LoadingSpinner';
 import ImageGenerationModal from './ImageGenerationModal';
 
@@ -140,9 +140,9 @@ const GeneratorView: React.FC = () => {
 
       <div className="space-y-6">
         {riddles.map((riddle) => (
-          <EpisodeDisplay 
+          <RiddleDisplay 
             key={riddle.riddleNumber} 
-            episode={riddle} 
+            riddle={riddle} 
             onStartImageGeneration={handleStartImageGeneration}
             onImproveDescription={handleImproveDescription}
             isImproving={isImprovingId === riddle.riddleNumber}

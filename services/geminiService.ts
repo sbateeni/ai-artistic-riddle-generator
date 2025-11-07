@@ -124,20 +124,10 @@ export const improveRiddleDescription = async (originalDescription: string): Pro
 
 
 export const generateImageFromRiddle = async (riddle: ArtisticRiddle): Promise<string[]> => {
-    const prompt = `
-      **Primary Goal:** Create a digital masterpiece that is both a work of art and a visual riddle.
-
-      **Core Description:**
-      "${riddle.description}"
-
-      **Artistic Directives:**
-      - **Style:** Photorealistic with a touch of surrealism. Imagine a still from a cinematic masterpiece by a visionary director.
-      - **Quality:** Masterpiece, 8K resolution, ultra-high detail (UHD), intricate textures.
-      - **Lighting:** Dramatic, cinematic lighting. Employ techniques like chiaroscuro, with deep, mysterious shadows and striking highlights that guide the viewer's eye towards the hidden details of the riddle.
-      - **Mood & Atmosphere:** Ethereal, mysterious, enigmatic, and profoundly atmospheric. The image should evoke a sense of wonder and curiosity.
-      - **Composition:** A meticulously crafted composition following the rule of thirds. The scene should feel balanced yet intriguing.
-      - **Rendering:** Render as if using Unreal Engine 5, achieving hyperrealism.
-    `;
+    // Simplified and more robust prompt
+    const prompt = `A cinematic, photorealistic masterpiece depicting the following scene: ${riddle.description}.
+Style: Ethereal, mysterious, and atmospheric with dramatic lighting.
+Quality: 8K, ultra-high detail, intricate textures.`;
 
     try {
         const response = await ai.models.generateImages({
